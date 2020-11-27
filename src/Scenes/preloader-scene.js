@@ -90,6 +90,6 @@ export default class PreloaderScene extends Phaser.Scene {
   ready() {
     this.scene.start('Options');
     this.readyCount += 1;
-    this.scene.start('Title');
+    this.scene.start('Credits');
   }
 }
