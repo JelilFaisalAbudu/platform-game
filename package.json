@@ -4,9 +4,9 @@
   "description": "An endless runner game develop using the Phaser Framework.",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack --config webpack/prod.js ",
-    "watch": "webpack --config webpack/base.js --watch",
-    "start": "webpack-dev-server --config webpack/base.js --open"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
