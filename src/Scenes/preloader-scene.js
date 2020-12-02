@@ -1,10 +1,4 @@
 import Phaser from 'phaser';
-import blueButton1 from '../assets/ui/blue_button02.png';
-import blueButton2 from '../assets/ui/blue_button03.png';
-import phaserLogo from '../assets/logo.png';
-import box from '../assets/ui/grey_box.png';
-import checkedBox from '../assets/ui/blue_boxCheckmark.png';
-import bgMusic from '../assets/sounds/TownTheme.mp3';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -80,16 +74,101 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
-    this.load.image('blueButton1', blueButton1);
-    this.load.image('blueButton2', blueButton2);
-    this.load.image('phaserLogo', phaserLogo);
-    this.load.image('box', box);
-    this.load.image('checkedBox', checkedBox);
-    this.load.audio('bgMusic', [bgMusic]);
+    this.load.image('blueButton1', 'assets/ui/blue_button02.png');
+    this.load.image('blueButton2', 'assets/ui/blue_button03.png');
+    this.load.image('phaserLogo', 'assets/logo.png');
+    this.load.image('box', 'assets/ui/grey_box.png');
+    this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
+    this.load.image('platform', 'assets/sprites/platform.png');
+    this.load.spritesheet('player_run', 'assets/sprites/player_run.png', {
+      frameWidth: 52.26,
+      frameHeight: 48,
+    });
+
+    this.load.spritesheet('player_jump', 'assets/sprites/player_jump.png', {
+      frameWidth: 52.26,
+      frameHeight: 48,
+    });
+
+    this.load.spritesheet('player_dead', 'assets/sprites/player_dead.png', {
+      frameWidth: 52.26,
+      frameHeight: 48,
+    });
+
+    this.load.spritesheet('coin', '../assets/sprites/coin.png', {
+      frameWidth: 20,
+      frameHeight: 20,
+    });
+
+    this.load.spritesheet('fire', '../assets/sprites/fire.png', {
+      frameWidth: 40,
+      frameHeight: 70,
+    });
+
+    this.load.spritesheet('mountain', 'assets/sprites/mountain.png', {
+      frameWidth: 512,
+      frameHeight: 512,
+    });
+    this.load.audio('bgMusic', ['assets/sounds/TownTheme.mp3']);
+    this.load.audio('pickup', ['assets/sounds/pickup.mp3']);
+    this.load.audio('dead', ['assets/sounds/dead.mp3']);
+  }
+
+  create() {
+    this.anims.create({
+      key: 'run',
+      frames: this.anims.generateFrameNumbers('player_run', {
+        start: 0,
+        end: 14,
+      }),
+      frameRate: 20,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'jump',
+      frames: this.anims.generateFrameNumbers('player_jump', {
+        start: 0,
+        end: 14,
+      }),
+      frameRate: 15,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'dead',
+      frames: this.anims.generateFrameNumbers('player_dead', {
+        start: 0,
+        end: 14,
+      }),
+      frameRate: 15,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'rotate',
+      frames: this.anims.generateFrameNumbers('coin', {
+        start: 0,
+        end: 5,
+      }),
+      frameRate: 15,
+      yoyo: true,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'burn',
+      frames: this.anims.generateFrameNumbers('fire', {
+        start: 0,
+        end: 4,
+      }),
+      frameRate: 15,
+      repeat: -1,
+    });
   }
 
   ready() {
-    this.scene.start('Title');
+    this.scene.start('Login');
     this.readyCount += 1;
     if (this.readyCount === 2) {
       this.scene.start('Title');
