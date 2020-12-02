@@ -11,6 +11,7 @@ const gameConfig = {
   physics: {
     default: 'arcade',
   },
+  user: '',
 };
 
 const gameOptions = {
