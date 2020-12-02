@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
     filename: 'project.bundle.js',
   },
@@ -22,10 +22,6 @@ module.exports = {
       {
         test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader',
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg|xml|mp3)$/i,
-        use: 'file-loader',
       },
     ],
   },
