@@ -1,4 +1,4 @@
-const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/RZEeQ1sUjcLkB6e2nvpj/scores/';
+const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Q5QgYGK08E4WMOU3gDCv/scores/';
 
 const sendScore = async (name, score) => {
   try {
