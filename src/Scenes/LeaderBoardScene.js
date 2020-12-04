@@ -17,7 +17,7 @@ export default class leaderBoardScene extends Phaser.Scene {
   async topScore() {
     const resultObject = await showScore();
     const scores = resultObject.result.sort((a, b) => ((a.score > b.score) ? -1 : 1));
-    const topFiveScore = (scores.length > 5) ? 5 : scores.length;
+    const topFiveScore = (scores.length > 3) ? 3 : scores.length;
     for (let i = 0; i < topFiveScore; i += 1) {
       this.add.text(300, 200 + i * 40, `${scores[i].user}: ${scores[i].score}`, { color: 'white', fontFamily: 'monospace', fontSize: '25px' });
     }
