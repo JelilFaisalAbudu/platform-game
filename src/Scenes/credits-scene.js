@@ -9,6 +9,7 @@ export default class CreditsScene extends Phaser.Scene {
   create() {
     this.creditsText = this.add.text(0, 0, 'Credits', { fontSize: '32px', fill: '#fff' });
     this.madeByText = this.add.text(0, 0, 'Created By: Jelil', { fontSize: '26px', fill: '#fff' });
+    // eslint-disable-next-line max-len
     this.zone = this.add.zone(gameConfig.width / 2, gameConfig.height / 2, gameConfig.width, gameConfig.height);
 
     Phaser.Display.Align.In.Center(
