@@ -80,18 +80,18 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.image('platform', 'assets/sprites/platform.png');
-    this.load.spritesheet('player_run', 'assets/sprites/player_run.png', {
-      frameWidth: 52.26,
+    this.load.spritesheet('player_run', 'assets/sprites/player_run2.png', {
+      frameWidth: 56.44,
       frameHeight: 48,
     });
 
-    this.load.spritesheet('player_jump', 'assets/sprites/player_jump.png', {
-      frameWidth: 52.26,
+    this.load.spritesheet('player_jump', 'assets/sprites/player_jump2.png', {
+      frameWidth: 56.44,
       frameHeight: 48,
     });
 
-    this.load.spritesheet('player_dead', 'assets/sprites/player_dead.png', {
-      frameWidth: 52.26,
+    this.load.spritesheet('player_dead', 'assets/sprites/player_dead2.png', {
+      frameWidth: 56.44,
       frameHeight: 48,
     });
 
@@ -119,9 +119,9 @@ export default class PreloaderScene extends Phaser.Scene {
       key: 'run',
       frames: this.anims.generateFrameNumbers('player_run', {
         start: 0,
-        end: 14,
+        end: 8,
       }),
-      frameRate: 20,
+      frameRate: 12,
       repeat: -1,
     });
 
@@ -129,7 +129,7 @@ export default class PreloaderScene extends Phaser.Scene {
       key: 'jump',
       frames: this.anims.generateFrameNumbers('player_jump', {
         start: 0,
-        end: 14,
+        end: 8,
       }),
       frameRate: 15,
       repeat: 0,
@@ -139,7 +139,7 @@ export default class PreloaderScene extends Phaser.Scene {
       key: 'dead',
       frames: this.anims.generateFrameNumbers('player_dead', {
         start: 0,
-        end: 14,
+        end: 10,
       }),
       frameRate: 15,
       repeat: 0,
