@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-[Click here](https://) to launch and play.
+[Click here](https://sweetrunner.netlify.app/) to launch and play.
 
 ## Built with
 
