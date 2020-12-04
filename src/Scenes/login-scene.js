@@ -13,6 +13,7 @@ export default class LoginScene extends Phaser.Scene {
 
   create() {
     const text = this.add.text(500, 10, 'Please enter your name', { color: 'white', fontSize: '30px' });
+    text.setOrigin(0.5, 0.1);
     const element = this.add.dom(400, 0).createFromCache('nameform');
     element.addListener('click');
     element.on('click', function func(event) {
