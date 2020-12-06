@@ -7,5 +7,6 @@ test('background music is not playing at starting', () => {
 
 test('turn on the background music', () => {
   const musicModelObj = new Model();
-  expect(musicModelObj.bgMusicPlaying).toEqual(false);
+  musicModelObj.bgMusicPlaying = true;
+  expect(musicModelObj.bgMusicPlaying).toEqual(true);
 });
