@@ -57,6 +57,10 @@ Otherwise, [click this](https://nodejs.org/en/download/) link to install one bef
 ![gameover](assets/screenshots/gameover.png)
 ![leaderboard](assets/game-screenshots/leaderboard-shot.png)
 
+## Game Design and Documentation
+
+[Click on this link](GAMEDESIGN.md) to read about the game design and instructions.
+
 ## Author
 
 👤 **Jelil Faisal Abudu**
