@@ -1,6 +1,5 @@
 import Phaser from 'phaser';
 import { gameConfig } from '../Config/config';
-// import nameForm from '../assets/ui/nameForm.html';
 
 export default class LoginScene extends Phaser.Scene {
   constructor() {
