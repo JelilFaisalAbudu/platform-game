@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-// import logoImage from '../assets/logo.png';
 import { gameConfig, gameOptions } from '../Config/config';
 
 export default class GameScene extends Phaser.Scene {
