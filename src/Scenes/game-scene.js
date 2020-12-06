@@ -74,13 +74,13 @@ export default class GameScene extends Phaser.Scene {
 
     this.platformCollider = this.physics.add.collider(this.player,
       this.platformGroup,
-      function func1() {
+      () => {
         if (!this.player.anims.isPlaying) {
           this.player.anims.play('run');
         }
       }, null, this);
 
-    this.physics.add.overlap(this.player, this.coinGroup, function func2(player, coin) {
+    this.physics.add.overlap(this.player, this.coinGroup, (player, coin) => {
       this.pickupMusic = this.sound.add('pickup', { volume: 0.5, loop: false });
       this.pickupMusic.play();
       this.tweens.add({
@@ -99,7 +99,7 @@ export default class GameScene extends Phaser.Scene {
       });
     }, null, this);
 
-    this.physics.add.overlap(this.player, this.fireGroup, function func3() {
+    this.physics.add.overlap(this.player, this.fireGroup, () => {
       this.dieMusic = this.sound.add('dead', { volume: 0.5, loop: false });
       this.dieMusic.play();
       this.dying = true;
@@ -228,7 +228,7 @@ export default class GameScene extends Phaser.Scene {
 
     let minDistance = gameConfig.width;
     let rightmostPlatformHeight = 0;
-    this.platformGroup.getChildren().forEach(function func4(platform) {
+    this.platformGroup.getChildren().forEach((platform) => {
       const platformDistance = gameConfig.width - platform.x - platform.displayWidth / 2;
       if (platformDistance < minDistance) {
         minDistance = platformDistance;
@@ -240,21 +240,21 @@ export default class GameScene extends Phaser.Scene {
       }
     }, this);
 
-    this.coinGroup.getChildren().forEach(function func5(coin) {
+    this.coinGroup.getChildren().forEach((coin) => {
       if (coin.x < -coin.displayWidth / 2) {
         this.coinGroup.killAndHide(coin);
         this.coinGroup.remove(coin);
       }
     }, this);
 
-    this.fireGroup.getChildren().forEach(function func6(fire) {
+    this.fireGroup.getChildren().forEach((fire) => {
       if (fire.x < -fire.displayWidth / 2) {
         this.fireGroup.killAndHide(fire);
         this.fireGroup.remove(fire);
       }
     }, this);
 
-    this.mountainGroup.getChildren().forEach(function func7(mountain) {
+    this.mountainGroup.getChildren().forEach((mountain) => {
       if (mountain.x < -mountain.displayWidth) {
         const rightmostMountain = this.getRightmostMountain();
         mountain.x = rightmostMountain + Phaser.Math.Between(100, 350);
